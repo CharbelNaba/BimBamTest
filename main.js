@@ -13,12 +13,12 @@ const remainingData = splittedData.splice(1)
 const chunk = arr => {
     const size = 2;
     const chunkedArray = [];
-    for (let i = 0; i < arr.length; i++) {
+    for (let subArray of arr) {
         const last = chunkedArray[chunkedArray.length - 1];
         if (!last || last.length === size) {
-            chunkedArray.push([arr[i]]);
+            chunkedArray.push([subArray]);
         } else {
-            last.push(arr[i]);
+            last.push(subArray);
         }
     };
     return chunkedArray;
